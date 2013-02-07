@@ -27,7 +27,7 @@ def fetch(url):
     key = REDIS_PREFIX + id
     existing = r.get(key)
     if existing and existing != title:
-      outstr = '%s: TITLE CHANGED (%s): "%s" -> "%s"' % \
+      outstr = '%s: TITLE CHANGED (%s): "%s" -> "%s"\n' % \
           (now.strftime("%Y-%m-%d %H:%M"), id, existing, title)
       f = open('output/log2', 'a')
       f.write(outstr)
